@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Gifts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="gifts.js"></script>
+    <style>
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 p-6">
+    <!-- Navigation -->
+    <nav class="bg-blue-600 p-4 text-white flex justify-between">
+        <a href="home.html" class="hover:underline">Home</a>
+        <span class="font-bold">Browse Gifts</span>
+        <a href="contact.html" class="hover:underline">Contact</a>
+    </nav>
+
+    <!-- Controls -->
+    <div class="mt-6 flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
+        <div class="flex space-x-2">
+            <select id="categoryFilter" class="p-2 rounded border border-gray-300">
+                <option value="All">All Categories</option>
+                <option value="Birthday">Birthday</option>
+                <option value="Anniversary">Anniversary</option>
+                <option value="Custom">Custom</option>
+            </select>
+            <button onclick="filterByCategory()"
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Filter</button>
+        </div>
+        <div class="flex space-x-2">
+            <input type="text" id="searchInput" placeholder="Search Gifts" class="p-2 rounded border border-gray-300">
+            <button onclick="searchGifts()"
+                class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700">Search</button>
+        </div>
+        <div class="flex space-x-2">
+            <button onclick="sortByPrice('asc')"
+                class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-700">Sort by Price ↑</button>
+            <button onclick="sortByPrice('desc')"
+                class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-700">Sort by Price ↓</button>
+            <button onclick="sortByPopularity()"
+                class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-700">Sort by Popularity</button>
+        </div>
+    </div>
+
+    <!-- Gift Cards Display -->
+    <div id="giftContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6"></div>
+</body>
+
+</html>
