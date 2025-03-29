@@ -1,2 +1,2 @@
-# Basketeries-prototype-1
+# Basketeries-project
 process of something amazing coming up!
